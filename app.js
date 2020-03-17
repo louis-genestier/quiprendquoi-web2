@@ -8,6 +8,7 @@ require('dotenv').config();
 app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
   res.render('index', { title: 'Qui prend quoi ?' });

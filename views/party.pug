@@ -3,7 +3,11 @@ h1 Qui prend quoi ?
 h2= party.name
 h3 Créé par #{party.author}
 label(for="url") Partagez l'évenement
-input(type="text" id="url" value=`${url}`)
+span
+  input(type="text" id="url" value=`${url}` data-clipboard=`${url}` data-share-url=`${url}` 
+  data-share-title=`${party.name}`
+  data-share-text=`${party.author} vous invite à rejoindre l'évenement ${party.name}`
+  )
 h3 Items
 form(method="post" action=`/party/${party._id}/items`)
   div
