@@ -11,9 +11,9 @@ app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/pwa'));
 
 app.use('/', home);
 app.use('/party', party);
-
 
 app.listen(process.env.PORT);

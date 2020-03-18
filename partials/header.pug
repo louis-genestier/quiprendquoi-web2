@@ -3,7 +3,15 @@ html(lang="fr")
     title QPQ - #{title}
     meta(charset="UTF-8")
     link(rel="stylesheet" href="/style.css")
+    link(rel="manifest" href="/manifest.json ")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     script(src="/script.js" async)
+    script.
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register('/sw.js')
+          .then(() => console.log('Worker is up'))
+          .catch((err) => console.warm(err))
+        ;
+      }
   body

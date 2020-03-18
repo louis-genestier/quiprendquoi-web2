@@ -22,3 +22,5 @@ div
       p #{item.user} - #{item.name}
       form(method="post" action=`/party/${party._id}/items/${item._id}?_method=DELETE`)
         button(type="submit") Supprimer l'item
+script.
+  party = !{JSON.stringify(party)}
