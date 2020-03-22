@@ -15,8 +15,8 @@ form(method="post" action=`/party/${party._id}/items`)
     input(type="text" id="name" name="name" required placeholder="Champomy")
     label(for="user") Nom de la personne qui doit le ramener
     input(type="text" id="user" name="user" required placeholder="Charles")
-  button(type="submit") Créer
-div
+  button(type="submit" id="sendItem") Créer
+div(class="items")
   each item in party.items
     div
       p #{item.user} - #{item.name}
