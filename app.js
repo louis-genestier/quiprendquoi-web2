@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const http = require('http').createServer(app);
+const socket = require('./socket')(http);
 const methodOverride = require('method-override');
 require('dotenv').config();
 
